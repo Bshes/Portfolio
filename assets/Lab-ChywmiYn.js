@@ -1,0 +1,1 @@
+import{r as e}from"./motion-vendor-wKhEcHeU.js";import{n as t,t as n}from"./index-CRMQtPgy.js";var r=e();function i(){return(0,r.jsxs)(`main`,{className:`pt-24`,children:[(0,r.jsx)(t,{title:`Lab`,description:`Explore real-time WebGL shader experiments and AI-driven visual prototypes in Saino's experimental lab.`,path:`/lab`}),(0,r.jsx)(n,{})]})}export{i as default};
