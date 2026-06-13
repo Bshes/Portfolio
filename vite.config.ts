@@ -5,6 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 
 export default defineConfig({
+  base: '/Portfolio/',
   build: {
     chunkSizeWarningLimit: 1000, // three-vendor is 892KB but lazy-loaded
     rollupOptions: {

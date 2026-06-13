@@ -1,7 +1,7 @@
 import { useRef, useMemo, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { createNoise2D, createNoise3D } from 'simplex-noise';
+import { createNoise2D } from 'simplex-noise';
 
 /* ---- Custom Shader Material for the Neural Sculpture ---- */
 const vertexShader = `
@@ -106,7 +106,7 @@ const wireFragmentShader = `
 `;
 
 /* ---- The 3D Sculpture Component ---- */
-function NeuralSculpture({ mouse }: { mouse: React.RefObject<{ x: number; y: number }> }) {
+function NeuralSculpture({ mouse }: { mouse: React.RefObject<{ x: number; y: number; px: number; py: number }> }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const wireRef = useRef<THREE.Mesh>(null);
   const groupRef = useRef<THREE.Group>(null);
@@ -239,7 +239,7 @@ export default function NeuralMascot({
   className?: string;
   scale?: number;
 }) {
-  const mouse = useRef({ x: 0, y: 0, px: 0, py: 0 });
+  const mouse = useRef<{ x: number; y: number; px: number; py: number }>({ x: 0, y: 0, px: 0, py: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

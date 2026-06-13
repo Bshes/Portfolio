@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { Flip } from 'gsap/Flip';
@@ -126,9 +126,5 @@ export function FlipElement({
   className?: string;
   [key: string]: unknown;
 }) {
-  return (
-    <div data-flip-key={flipKey} className={className} {...props}>
-      {children}
-    </div>
-  );
+  return React.createElement('div', { 'data-flip-key': flipKey, className, ...props }, children);
 }

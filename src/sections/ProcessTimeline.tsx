@@ -7,7 +7,7 @@ import { Search, Layers, Palette, Code, Rocket, RefreshCw } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   Search, Layers, Palette, Code, Rocket, RefreshCw,
 };
 

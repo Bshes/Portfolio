@@ -112,7 +112,7 @@ export function useFluidSimulation(
     }
 
     sim.step(dt);
-    renderer.render(sim.scene, sim.camera);
+    renderer.render((sim as any).scene, (sim as any).camera);
     rafRef.current = requestAnimationFrame(animate);
   }, [autoDemo, colors, normToSim, splatRadius]);
 
@@ -184,7 +184,7 @@ export function useFluidSimulation(
     renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
     rendererRef.current = renderer;
 
-    const sim = new FluidSimulation(renderer, {
+    const sim = new FluidSimulation(renderer as any, {
       simResolution,
       dyeResolution,
       pressureIterations,
